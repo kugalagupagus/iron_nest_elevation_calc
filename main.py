@@ -3,13 +3,13 @@ from calculator import elevation_calc
 
 def show_value():
     try:
-          distance = float(entry.get())
-          elevation, powder_charges = elevation_calc(distance)
-          print(f"Distance to target: {distance}")
-          print(f"Elevation: {elevation}")
-          print(f"Powder Charges: {powder_charges}")
+        distance = float(entry.get())
+        elevation, powder_charges = elevation_calc(distance)
+        print(f"Distance to target: {distance}")
+        print(f"Elevation: {elevation}")
+        print(f"Powder Charges: {powder_charges}")
     except ValueError:
-          print("Value provided is not a float number")
+        print("Value provided is not a float number")
 
 root = tk.Tk()
 
