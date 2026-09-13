@@ -1,21 +1,5 @@
 import tkinter as tk
-
-def elevation_calc(distance):
-    max_elevation = 60
-    if distance <= 10:
-        powder_charges = 1
-    elif distance <= 20:
-        powder_charges = 2
-    elif distance <= 30:
-            powder_charges = 3
-    elif distance <= 40:
-            powder_charges = 4
-    elif distance <= 50:
-            powder_charges = 5
-    else:
-          powder_charges = 6
-    elevation = (distance * max_elevation) / (powder_charges * 10)
-    return elevation, powder_charges
+from calculator import elevation_calc
 
 def show_value():
     try:
@@ -25,7 +9,7 @@ def show_value():
           print(f"Elevation: {elevation}")
           print(f"Powder Charges: {powder_charges}")
     except ValueError:
-          print("Value povided is not a float number")
+          print("Value provided is not a float number")
 
 root = tk.Tk()
 
