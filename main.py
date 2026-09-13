@@ -25,6 +25,10 @@ root = tk.Tk()
 
 toggler = WindowToggler(root)
 
+root.attributes('-topmost', True)
+root.resizable(False, False)
+root.geometry("300x250")
+
 label = tk.Label(root, text="Distance (km):")
 label.pack()
 
