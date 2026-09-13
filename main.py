@@ -9,13 +9,13 @@ def show_value():
     powder_charges_label.pack_forget()
     status_label.pack_forget()
     try:
-        distance = float(entry.get())
+        distance = float(entry.get().replace(",", "."))
         elevation, powder_charges = elevation_calc(distance)
         distance_label.pack(before=entry)
         elevation_label.pack(before=entry)
         powder_charges_label.pack(before=entry)
         distance_label.configure(text=f"{distance}")
-        elevation_label.configure(text=f"Elevation: {elevation}")
+        elevation_label.configure(text=f"Elevation: {round(elevation, 2)}")
         powder_charges_label.configure(text=f"Powder Charges: {powder_charges}")
     except ValueError:
         status_label.pack(before=entry)
