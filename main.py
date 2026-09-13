@@ -1,5 +1,7 @@
 import tkinter as tk
+import keyboard
 from calculator import elevation_calc
+from window_controls import WindowToggler
 
 def show_value():
     distance_label.pack_forget()
@@ -21,6 +23,8 @@ def show_value():
 
 root = tk.Tk()
 
+toggler = WindowToggler(root)
+
 label = tk.Label(root, text="Distance (km):")
 label.pack()
 
@@ -37,5 +41,7 @@ entry.pack()
 
 button = tk.Button(root, text="Show", command=show_value)
 button.pack()
+
+keyboard.add_hotkey('f8', toggler.on_hotkey)
 
 root.mainloop()
